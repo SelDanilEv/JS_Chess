@@ -1,0 +1,34 @@
+@import "nullstyle.scss";
+
+@import "board_style.css";
+
+body {
+  background-image: url("../img/background/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.game {
+  font-size: 20px;
+  width: 1200px;
+  padding-left: 40px;
+  margin: 0px 0px 0px 0px;
+}
+
+$turnBlockSize: 3em;
+.game__turn .turn {
+  height: $turnBlockSize;
+  width: $turnBlockSize;
+}
+
+.turn__black {
+  background-color: black;
+  border: solid 1px black;
+}
+
+.turn__white {
+  background-color: azure;
+  border: solid 5px green;
+}
