@@ -15,13 +15,13 @@
 
     </div>
     <div class="game__turn">
-        <div class="turn__black turn"></div>
         <div class="turn__white turn"></div>
+        <div class="turn__black turn"></div>
     </div>
     <div class="game__AddMenu">
         <div class="AddMenu__Color">
             <div class="game__title title">Color:</div>
-            <select id="pieceColor" onchange="controller.view.CreatePreviewImage()">
+            <select id="pieceColor" onchange="controller.CreatePreviewImage()">
                 <option value="black">
                     Black
                 </option>
@@ -32,7 +32,7 @@
         </div>
         <div class="AddMenu__Kind">
             <div class="game__title title">Kind:</div>
-            <select id="pieceKind" onchange="controller.view.CreatePreviewImage()">
+            <select id="pieceKind" onchange="controller.CreatePreviewImage()">
                 <option value="k">King</option>
                 <option value="q">Queen</option>
                 <option value="r">Rook</option>
@@ -51,8 +51,10 @@
             </div>
         </div>
         <div class="AddMenu__Confirm">
-            <input type="button" value="Set" class="SetButton button" onclick="SetFigure()">
-            <input type="button" value="Clear" class="ClearButton button" onclick="ClearField()">
+            <input type="button" value="Set" class="SetButton button" onclick="controller.SetPiece()">
+            <input type="button" value="Clear" class="ClearButton button" onclick="controller.ClearField()">
+            <input type="button" value="Classic" class="SetClassicButton button" onclick="controller.SetClassic()">
+            <input type="button" value="ClearAll" class="ClearAllButton button" onclick="controller.ClearAllFields()">
         </div>
     </div>
     <div class="game__board">
@@ -159,6 +161,20 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="game__MoveMenu">
+        <div class="MoveMenu__title title">Enter the coordinates of the move</div>
+        <div class="MoveMenu__CoordinatesFrom">
+            From:
+            <input type="text" alt="" placeholder="a1" id="CoordinatesFrom" maxlength="2" style="background: none">
+        </div>
+        <div class="MoveMenu__CoordinatesTo">
+            To:
+            <input type="text" alt="" placeholder="a2" id="CoordinatesTo" maxlength="2" style="background: none">
+        </div>
+        <div class="MoveMenu__Confirm">
+            <input type="button" value="Make a move" class="MoveButton button" onclick="controller.MovePiece()">
+        </div>
     </div>
 </div>
 <footer></footer>
