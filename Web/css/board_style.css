@@ -3,23 +3,33 @@
     border-collapse: collapse;
 }
 
+table {
+    table-layout: fixed;
+}
+
+td{
+    width: 100%;
+    text-align: center;
+}
+
+.game__chess-board tr:last-child{
+    height: 25px;
+}
+
+th{
+    width: 25px;
+}
+
 .game__chess-board tr td {
+    position: relative;
     border: 1px solid;
-    min-height: 5em;
-    min-width: 5em;
-    height: 5em;
-    width: 5em;
+    height: min-content;
     text-align: center;
     vertical-align: middle;
     background: #99714f;
 }
 
-.game__chess-board tr th {
-    padding: 5px;
-}
-
 .game__chess-board tr:nth-child(odd) td:nth-child(even),
-.game__chess-board tr:nth-child(even) td:nth-child(odd)
-{
+.game__chess-board tr:nth-child(even) td:nth-child(odd) {
     background: #8fcb81;
 }

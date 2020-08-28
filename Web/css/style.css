@@ -62,27 +62,64 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: cover; }
-
-.game {
-  font-size: 20px;
-  width: 1200px;
-  padding-left: 40px;
-  margin: 0px 0px 0px 0px; }
+  background-size: cover;
+  color: red; }
+  body .game {
+    font-size: 20px;
+    width: 70%;
+    height: 100%;
+    padding-left: 40px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: black; }
+    body .game #game__message {
+      text-align: center;
+      font-size: 3em;
+      height: 1em;
+      margin-bottom: 10px; }
+  body .game__gameZone {
+    display: flex;
+    margin: 0 auto; }
+    body .game__gameZone div .game__turn {
+      display: flex;
+      margin: 10px auto;
+      width: 60%; }
+    body .game__gameZone div .game__AddMenu {
+      display: flex;
+      margin: 10px auto;
+      flex-direction: column; }
+      body .game__gameZone div .game__AddMenu .AddMenu__PieceConfig {
+        display: flex;
+        margin: 10px auto; }
+        body .game__gameZone div .game__AddMenu .AddMenu__PieceConfig .AddMenu__Color {
+          padding-right: 25px; }
+      body .game__gameZone div .game__AddMenu .AddMenu__Preview {
+        margin: 5px auto; }
+      body .game__gameZone div .game__AddMenu .AddMenu__Coordinates {
+        text-align: center; }
+        body .game__gameZone div .game__AddMenu .AddMenu__Coordinates .Coordinates__Input {
+          margin: auto;
+          width: 10%; }
 
 .game__turn .turn {
   height: 3em;
   width: 3em; }
 
+.game__chess-board {
+  height: 50em;
+  width: 50em; }
+
 .turn__black {
   background-color: black;
-  border: solid 1px black; }
+  border: solid 1px white; }
 
 .turn__white {
   background-color: azure;
   border: solid 5px green; }
 
 input {
-  font-size: 1em; }
+  font-size: 1em;
+  color: red; }
 
 /*# sourceMappingURL=style.css.map */

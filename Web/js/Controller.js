@@ -1,80 +1,6 @@
 'use strict'
 
-class Model {
-    constructor() {
-    }
-
-    Pieces = [];
-
-    GetPieceByCoordinates(coordinates) {
-        return this.Pieces.find(x => x.coordinates === coordinates);
-    }
-
-    AddPiece(Piece) {
-        let pieceIndex = this.Pieces.findIndex(x => x.coordinates === Piece.coordinates);
-        if (pieceIndex === -1) {
-            this.Pieces.push(Piece);
-        } else {
-            this.Pieces[pieceIndex] = Piece;
-        }
-    };
-
-    MovePiece(coordinatesFrom, coordinatesTo) {
-        this.ClearField(coordinatesTo);
-        let pieceIndex = this.Pieces.findIndex(x => x.coordinates === coordinatesFrom);
-        if (pieceIndex !== -1)
-            this.Pieces[pieceIndex].Move(coordinatesTo);
-    }
-
-    ClearField(coordinates) {
-        let pieceIndex = this.Pieces.findIndex(x => x.coordinates === coordinates);
-        if (pieceIndex !== -1)
-            this.Pieces.splice(pieceIndex, 1);
-    }
-}
-
-class View {
-    constructor() {
-        this.turn = "white";
-    }
-
-    ShowMessage(str) {
-        let messageBox = $("#game__message");
-        messageBox.text(str);
-        setTimeout(() => messageBox.text(""), 2000)
-    }
-
-    DefinePreviewImage(color, kind) {
-        $("#AddMenu__PreviewImage").attr('src', 'img/pieces/' + color + kind + '.png');
-    }
-
-    ClearField(coordinates) {
-        $(coordinates).text("");
-    }
-
-    SetPiece(CellID, KindOfPiece, ColorOfPiece) {
-        let image = document.createElement("IMG");
-        image.src = 'img/pieces/' + ColorOfPiece + KindOfPiece + '.png';
-        image.style.height = image.style.width = "100%";
-        this.ClearField(CellID);
-        $(CellID).append(image);
-    }
-
-    ChangeTurn() {
-        $(".turn").css("border", "solid 1px black")
-        switch (this.turn) {
-            case "white":
-                this.turn = "black"
-                break;
-            case "black":
-                this.turn = "white"
-                break;
-        }
-        $(".turn__" + this.turn).css("border", "solid 5px green")
-    }
-}
-
-class Controller {
+ class Controller {
     constructor(model, view) {
         this.model = model;
         this.view = view;
@@ -186,7 +112,12 @@ class Controller {
         }
     }
 
+    SetBoard(numb){
+        this.view.SetBoard(numb);
+    }
+
     SetClassic() {
+        this.view.SetBoard(8);
         this.ClearAllFields();
         let letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
@@ -224,18 +155,5 @@ class Controller {
             this.view.ClearField(this.model.Pieces[i].coordinates);
         }
         this.model.Pieces = [];
-    }
-}
-
-
-class Piece {
-    constructor(color, type, coordinates) {
-        this.color = color;
-        this.type = type;
-        this.coordinates = coordinates;
-    }
-
-    Move(coordinates) {
-        this.coordinates = coordinates;
     }
 }
