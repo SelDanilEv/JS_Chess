@@ -62,45 +62,94 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  background-size: cover;
-  color: red; }
+  background-size: cover; }
   body .game {
     font-size: 20px;
     width: 70%;
     height: 100%;
     padding-left: 40px;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    background-color: black; }
+    background-color: black;
+    color: red; }
     body .game #game__message {
       text-align: center;
       font-size: 3em;
       height: 1em;
       margin-bottom: 10px; }
-  body .game__gameZone {
-    display: flex;
-    margin: 0 auto; }
-    body .game__gameZone div .game__turn {
+    body .game .game__gameZone {
       display: flex;
-      margin: 10px auto;
-      width: 60%; }
-    body .game__gameZone div .game__AddMenu {
-      display: flex;
-      margin: 10px auto;
-      flex-direction: column; }
-      body .game__gameZone div .game__AddMenu .AddMenu__PieceConfig {
+      margin: 0 auto; }
+      body .game .game__gameZone div .game__turn {
         display: flex;
-        margin: 10px auto; }
-        body .game__gameZone div .game__AddMenu .AddMenu__PieceConfig .AddMenu__Color {
-          padding-right: 25px; }
-      body .game__gameZone div .game__AddMenu .AddMenu__Preview {
-        margin: 5px auto; }
-      body .game__gameZone div .game__AddMenu .AddMenu__Coordinates {
-        text-align: center; }
-        body .game__gameZone div .game__AddMenu .AddMenu__Coordinates .Coordinates__Input {
-          margin: auto;
-          width: 10%; }
+        margin: 60px auto 0px;
+        width: 60%; }
+      body .game .game__gameZone div .game__AddMenu {
+        display: flex;
+        margin: 10px auto;
+        flex-direction: column; }
+        body .game .game__gameZone div .game__AddMenu .AddMenu__PieceConfig {
+          display: flex;
+          margin: 80px auto 0px; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__PieceConfig .AddMenu__Color {
+            padding-right: 25px; }
+        body .game .game__gameZone div .game__AddMenu .AddMenu__Preview {
+          margin: 5px auto 30px; }
+        body .game .game__gameZone div .game__AddMenu .AddMenu__Coordinates {
+          text-align: center;
+          margin: 0px auto 30px; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__Coordinates .Coordinates__Input {
+            margin: 5px auto;
+            width: 10%; }
+        body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm {
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+          width: 100%; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm .AddMenu__ManipulationButtons {
+            margin: 0 auto 50px;
+            width: 100%;
+            display: flex; }
+            body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm .AddMenu__ManipulationButtons .button {
+              margin: auto;
+              width: 40%; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm .button {
+            margin: auto;
+            width: 80%; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm .SetClassicButton {
+            margin-bottom: 10px; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__Confirm .ClearAllButton {
+            margin-bottom: 50px; }
+        body .game .game__gameZone div .game__AddMenu .AddMenu__BoardSize {
+          text-align: center;
+          width: 100%; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__BoardSize .BoardSize__title {
+            margin-bottom: 5px; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__BoardSize #BorderSize {
+            text-align: center;
+            height: 1.5em;
+            width: 70%;
+            margin-right: 10px; }
+          body .game .game__gameZone div .game__AddMenu .AddMenu__BoardSize #BoardSizeValue {
+            font-size: 2em; }
+      body .game .game__gameZone .game__board {
+        flex: 1 1 auto; }
+      body .game .game__gameZone .game__MoveMenu {
+        margin-left: 35px;
+        margin-top: 20%;
+        width: 150px; }
+        body .game .game__gameZone .game__MoveMenu .MoveMenu__Coordinates {
+          display: flex;
+          margin: 0 auto 50px;
+          width: 200px; }
+          body .game .game__gameZone .game__MoveMenu .MoveMenu__Coordinates div {
+            margin: auto;
+            width: 50%; }
+            body .game .game__gameZone .game__MoveMenu .MoveMenu__Coordinates div input {
+              width: 20%; }
 
 .game__turn .turn {
   height: 3em;

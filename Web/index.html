@@ -11,7 +11,6 @@
     <script src="js/GameLogic.js"></script>
 </head>
 <body>
-<header></header>
 <div class="game">
     <div id="game__message">
         hey hy
@@ -58,155 +57,37 @@
                     </div>
                 </div>
                 <div class="AddMenu__Confirm">
-                    <input type="button" value="Set" class="SetButton button" onclick="controller.SetPiece()">
-                    <input type="button" value="Clear" class="ClearButton button" onclick="controller.ClearField()">
+                    <div class="AddMenu__ManipulationButtons">
+                        <input type="button" value="Set" class="SetButton button" onclick="controller.SetPiece()">
+                        <input type="button" value="Clear" class="ClearButton button" onclick="controller.ClearField()">
+                    </div>
                     <input type="button" value="Classic" class="SetClassicButton button"
                            onclick="controller.SetClassic()">
                     <input type="button" value="ClearAll" class="ClearAllButton button"
                            onclick="controller.ClearAllFields()">
                 </div>
                 <div class="AddMenu__BoardSize">
-                    <span id="BoardSizeValue">9</span>
+                    <div class="BoardSize__title">
+                        <span class="title">Board size</span>
+                    </div>
                     <input type="range" min="3" max="9" value="9" id="BorderSize" onchange="ChangeBoardSize()">
+                    <span id="BoardSizeValue">9</span>
                 </div>
             </div>
         </div>
-
         <div class="game__board">
-            <!--        <table class="game__chess-board">-->
-            <!--            <tbody>-->
-            <!--            <tr>-->
-            <!--                <th>9</th>-->
-            <!--                <td id="a9"></td>-->
-            <!--                <td id="b9"></td>-->
-            <!--                <td id="c9"></td>-->
-            <!--                <td id="d9"></td>-->
-            <!--                <td id="e9"></td>-->
-            <!--                <td id="f9"></td>-->
-            <!--                <td id="g9"></td>-->
-            <!--                <td id="h9"></td>-->
-            <!--                <td id="i9"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>8</th>-->
-            <!--                <td id="a8"></td>-->
-            <!--                <td id="b8"></td>-->
-            <!--                <td id="c8"></td>-->
-            <!--                <td id="d8"></td>-->
-            <!--                <td id="e8"></td>-->
-            <!--                <td id="f8"></td>-->
-            <!--                <td id="g8"></td>-->
-            <!--                <td id="h8"></td>-->
-            <!--                <td id="i8"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>7</th>-->
-            <!--                <td id="a7"></td>-->
-            <!--                <td id="b7"></td>-->
-            <!--                <td id="c7"></td>-->
-            <!--                <td id="d7"></td>-->
-            <!--                <td id="e7"></td>-->
-            <!--                <td id="f7"></td>-->
-            <!--                <td id="g7"></td>-->
-            <!--                <td id="h7"></td>-->
-            <!--                <td id="i7"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>6</th>-->
-            <!--                <td id="a6"></td>-->
-            <!--                <td id="b6"></td>-->
-            <!--                <td id="c6"></td>-->
-            <!--                <td id="d6"></td>-->
-            <!--                <td id="e6"></td>-->
-            <!--                <td id="f6"></td>-->
-            <!--                <td id="g6"></td>-->
-            <!--                <td id="h6"></td>-->
-            <!--                <td id="i6"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>5</th>-->
-            <!--                <td id="a5"></td>-->
-            <!--                <td id="b5"></td>-->
-            <!--                <td id="c5"></td>-->
-            <!--                <td id="d5"></td>-->
-            <!--                <td id="e5"></td>-->
-            <!--                <td id="f5"></td>-->
-            <!--                <td id="g5"></td>-->
-            <!--                <td id="h5"></td>-->
-            <!--                <td id="i5"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>4</th>-->
-            <!--                <td id="a4"></td>-->
-            <!--                <td id="b4"></td>-->
-            <!--                <td id="c4"></td>-->
-            <!--                <td id="d4"></td>-->
-            <!--                <td id="e4"></td>-->
-            <!--                <td id="f4"></td>-->
-            <!--                <td id="g4"></td>-->
-            <!--                <td id="h4"></td>-->
-            <!--                <td id="i4"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>3</th>-->
-            <!--                <td id="a3"></td>-->
-            <!--                <td id="b3"></td>-->
-            <!--                <td id="c3"></td>-->
-            <!--                <td id="d3"></td>-->
-            <!--                <td id="e3"></td>-->
-            <!--                <td id="f3"></td>-->
-            <!--                <td id="g3"></td>-->
-            <!--                <td id="h3"></td>-->
-            <!--                <td id="i3"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>2</th>-->
-            <!--                <td id="a2"></td>-->
-            <!--                <td id="b2"></td>-->
-            <!--                <td id="c2"></td>-->
-            <!--                <td id="d2"></td>-->
-            <!--                <td id="e2"></td>-->
-            <!--                <td id="f2"></td>-->
-            <!--                <td id="g2"></td>-->
-            <!--                <td id="h2"></td>-->
-            <!--                <td id="i2"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th>1</th>-->
-            <!--                <td id="a1"></td>-->
-            <!--                <td id="b1"></td>-->
-            <!--                <td id="c1"></td>-->
-            <!--                <td id="d1"></td>-->
-            <!--                <td id="e1"></td>-->
-            <!--                <td id="f1"></td>-->
-            <!--                <td id="g1"></td>-->
-            <!--                <td id="h1"></td>-->
-            <!--                <td id="i1"></td>-->
-            <!--            </tr>-->
-            <!--            <tr>-->
-            <!--                <th></th>-->
-            <!--                <th>a</th>-->
-            <!--                <th>b</th>-->
-            <!--                <th>c</th>-->
-            <!--                <th>d</th>-->
-            <!--                <th>e</th>-->
-            <!--                <th>f</th>-->
-            <!--                <th>g</th>-->
-            <!--                <th>h</th>-->
-            <!--                <th>i</th>-->
-            <!--            </tr>-->
-            <!--            </tbody>-->
-            <!--        </table>-->
         </div>
         <div class="game__MoveMenu">
             <div class="MoveMenu__title title">Enter the coordinates of the move</div>
-            <div class="MoveMenu__CoordinatesFrom">
-                From:
-                <input type="text" alt="" placeholder="a1" id="CoordinatesFrom" maxlength="2" style="background: none">
-            </div>
-            <div class="MoveMenu__CoordinatesTo">
-                To:
-                <input type="text" alt="" placeholder="a2" id="CoordinatesTo" maxlength="2" style="background: none">
+            <div class="MoveMenu__Coordinates">
+                <div class="MoveMenu__CoordinatesFrom">
+                    From:
+                    <input type="text" alt="" placeholder="a1" id="CoordinatesFrom" maxlength="2">
+                </div>
+                <div class="MoveMenu__CoordinatesTo">
+                    To:
+                    <input type="text" alt="" placeholder="a2" id="CoordinatesTo" maxlength="2">
+                </div>
             </div>
             <div class="MoveMenu__Confirm">
                 <input type="button" value="Make a move" class="MoveButton button" onclick="controller.MovePiece()">
@@ -214,7 +95,5 @@
         </div>
     </div>
 </div>
-<footer>
-</footer>
 </body>
 </html>
